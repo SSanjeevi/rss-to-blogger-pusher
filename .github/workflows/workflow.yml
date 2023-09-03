@@ -17,7 +17,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
         - name: Rss-feed-to-Blogger-action
-          uses: SSanjeevi/rss-to-blogger@release-0.6
+          uses: SSanjeevi/rss-to-blogger@release-0.7
           with:
            GOOGLE_CREDENTIALS_Json: ${{ secrets.GOOGLE_CREDENTIALS_Json }}
            BloggerId: '4243659437681898774'
@@ -25,4 +25,5 @@ jobs:
            FeedArticleStartCount: '66'
            FeedArticleEndCount: '75'
            Labels: 'azure'
+           ApiKey: ${{ secrets.ApiKey }}
             
