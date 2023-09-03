@@ -1,0 +1,27 @@
+# This is a basic workflow to help you get started with Actions
+
+name: rss-to-blogger-push
+
+# Controls when the workflow will run
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+        - name: Rss-feed-to-Blogger-action
+          uses: SSanjeevi/rss-to-blogger@release-0.1
+          with:
+           GOOGLE_CREDENTIALS_Json: ${{ secrets.GOOGLE_CREDENTIALS_Json }}
+           BloggerId: '4243659437681898774'
+           RSSFeedUrl: 'https://techcommunity.microsoft.com/plugins/custom/microsoft/o365/custom-blog-rss?tid=-189242975710986885&board=FastTrackforAzureBlog&size=355'
+           FeedArticleStartCount: '66'
+           FeedArticleEndCount: '75'
+            
